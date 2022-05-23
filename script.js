@@ -32,7 +32,6 @@ function drawTree(startX, startY, len, angle, branchWidth, color1, color2) {
     ctx.restore();
     return;
   }
-
   drawTree(0, -len, len * 0.75, angle + curve, branchWidth * 0.6);
   drawTree(0, -len, len * 0.75, angle - curve, branchWidth * 0.6);
 
@@ -67,6 +66,8 @@ function generateTree() {
   treeButton.style.background = color1;
   treeButton.style.color = color2;
   curve = Math.random() * 10 + 10;
+  let gitlink = document.querySelector(".git-link");
+  gitlink.style.color = color2;
   drawTree(
     centerX,
     canvas.height - 80,
